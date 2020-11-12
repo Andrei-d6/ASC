@@ -1,0 +1,60 @@
+--Running Test 1--
+1000000 elements 1 insert
+
+Inserted 1000000 elements in 5.522208 ms (181.086976 million keys/second)
+HASH_BATCH_INSERT, 1000000, 100, 90
+Inserted 64 elements in 0.141888 ms (0.451060 million keys/second)
+Got 1000000 elements in 2.956160 ms (338.276671 million keys/second)
+HASH_BATCH_GET, 1000000, 100, 89.9943
+
+
+
+--Running Test 2--
+2000000 elements 1 insert
+
+
+Inserted 2000000 elements in 12.004896 ms (166.598693 million keys/second)
+HASH_BATCH_INSERT, 2000000, inf, 90
+Inserted 64 elements in 0.278816 ms (0.229542 million keys/second)
+Got 2000000 elements in 5.893408 ms (339.362225 million keys/second)
+HASH_BATCH_GET, 2000000, 66.6667, 89.9971
+
+
+
+--Running Test 3--
+4000000 elements 2 insert
+
+
+Inserted 2000000 elements in 12.239008 ms (163.411934 million keys/second)
+HASH_BATCH_INSERT, 2000000, inf, 90
+Inserted 2000000 elements in 19.431776 ms (102.924203 million keys/second)
+HASH_BATCH_INSERT, 2000000, inf, 90
+Inserted 64 elements in 0.132864 ms (0.481696 million keys/second)
+Got 2000000 elements in 6.038624 ms (331.201288 million keys/second)
+HASH_BATCH_GET, 2000000, inf, 89.9986
+Got 2000000 elements in 5.849440 ms (341.913065 million keys/second)
+HASH_BATCH_GET, 2000000, 200, 89.9986
+
+
+
+--Running Test 4--
+10000000 elements 4 inserts
+
+
+Inserted 2500000 elements in 15.360608 ms (162.753977 million keys/second)
+HASH_BATCH_INSERT, 2500000, 50, 90
+Inserted 2500000 elements in 24.766657 ms (100.942164 million keys/second)
+HASH_BATCH_INSERT, 2500000, 35.7143, 90
+Inserted 2500000 elements in 32.238014 ms (77.548201 million keys/second)
+HASH_BATCH_INSERT, 2500000, 35.7143, 90
+Inserted 2500000 elements in 38.189537 ms (65.462955 million keys/second)
+HASH_BATCH_INSERT, 2500000, 35.7143, 90
+Inserted 64 elements in 0.095040 ms (0.673401 million keys/second)
+Got 2500000 elements in 7.387072 ms (338.429068 million keys/second)
+HASH_BATCH_GET, 2500000, 125, 89.9994
+Got 2500000 elements in 7.312960 ms (341.858837 million keys/second)
+HASH_BATCH_GET, 2500000, 125, 89.9994
+Got 2500000 elements in 7.461536 ms (335.051668 million keys/second)
+HASH_BATCH_GET, 2500000, 83.3333, 89.9994
+Got 2500000 elements in 7.512960 ms (332.758322 million keys/second)
+HASH_BATCH_GET, 2500000, 125, 89.9994

@@ -1,0 +1,11 @@
+Dugaesescu Andrei 331CC
+
+Laborator 7 - ASC
+
+Task 1
+	
+TODO 4 - kernel_block_id
+	In cadrul acestui task se cere modificarea valorilor elementelor vectorului astfel incat acestea sa reflecte id-ul blocului in care acestea au fost prelucrate. Din output-ul obtinut se poate observa faptul ca id-urile sunt grupate (apar 4 0-uri consecutive urmate de 4 valori de 1 consecutive etc.) fapt ce indica gruparea thread-urilor in block-uri.
+
+TODO 5 - kernel_thread_id
+	In cadrul acestui task se cere modificarea valorilor elementelor vectorului astfel incat acestea sa reflecte id-ul thread-ului in care acestea au fost prelucrate (din fiecare block). Dat fiind output-ul obtinut se poate vedea secventialitatea indicilor thread-urilor. Fiind folosite 4 thread-uri per block, apare la output un sir 0 1 2 3 (cate o aparitie pentru fiecare block).

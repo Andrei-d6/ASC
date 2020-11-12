@@ -1,0 +1,81 @@
+Dugaesescu Andrei 331CC
+
+Laborator 6 ASC
+
+Task 1
+
+primes-ex (versiunea seriala)	|	primes-omp (versiunea paralela)
+				|
+n = 400.000			|
+real	0m12.343s		|	real	0m0.788s
+user	0m12.349s		|	user	0m21.106s
+sys	0m0.005s		|	sys	0m0.122s
+				|
+n = 300.000			|
+real	0m6.617s		|	real	0m0.642s
+user	0m6.712s		|	user	0m13.662s
+sys	0m0.002s		|	sys	0m0.146s
+				|
+n = 200.000			|
+real	0m3.556s		|	real	0m0.296s
+user	0m3.535s		|	user	0m7.642s
+sys	0m0.002s		|	sys	0m0.210s
+				|
+n = 100.000			|
+real	0m1.085s		|	real	0m0.149s
+user	0m1.008s		|	user	0m3.009s
+sys	0m0.001s		|	sys	0m0.215s
+				|
+n = 40.000			|
+real	0m0.201s		|	real	0m0.052s
+user	0m0.169s		|	user	0m1.129s
+sys	0m0.001s		|	sys	0m0.303s
+				|
+n = 4.000			|
+real	0m0.008s		|	real	0m0.014s
+user	0m0.004s		|	user	0m0.368s
+sys	0m0.003s		|	sys	0m0.034s
+
+Pe baza rezultatelor se poate observa faptul ca variatia de timp in functie de valoare lui n nu este liniara.
+Odata cu cresterea n ului (folosirea unor numere mari) timpul de testare necesar creste mult mai mult.
+
+Dupa cum era de asteptat, varianta paralela este mult mai rapida decat cea seriala din punct de vedere al timpului de executie. In varianta paralela apare in plus un overhead datorat timpului necesar pentru crearea thread-urilor dupa cum se poate vedea si din cresterea sys time-ului.
+
+Cu ajutorul kachegrind se pot observa apelurile de functii din interiorul programului, procentajul de ocupare al timpului de executie pentru fiecare functie, numarul de apeluri de functii, codul acestora, cat dureaza etc.
+
+
+
+Task 2
+
+Cu ajutorul Solaris Studio Profiler se poate observa timeline-ul threadu-urilor, precum si timpul de executie pentru fiecare thread. Este de remarcat efectul inlocuirii #pragma omp parallel for schedule(static) cu #pragma omp parallel for schedule(dynamic). Se poate observa ca in primul caz incarcarea thread-urilor nu era distribuita uniform. Thread-urile care se ocupau de lucrul cu numere mici se terminau mult mai repede decat thread-urile care se ocupau de numere mari. Pentru dynamic, distributia era mai uniforma, astfel ca thread-urile testau atat numere mici, cat si numere mari. Timeline-ul devenea insa fragmentat.
+
+
+
+Task 3
+Versiunea seriala: 11.3s
+Versiunea paralela: 5.11s
+(Timpi obtinuti local)
+
+
+In cazul rularii seriale s-a putut observa faptul ca imaginea era obtinuta linie cu linie - secvential de jos in sus.
+In cazul paralel, mai multe linii erau incarcate in acelasi timp, incarcarea acestora fiind ditribuita intre thread-uri.
+
+
+
+Task 4
+
+Se observa faptul ca in varianta paralela de rulare a programului, thread-urile nu au acelasi timp de rulare iar timeline-ul apare fragmentat. De asemenea, in analiza de tip Functions a rularii seriale, functia care ocupa cea mai mare partea din real time este functia render_one_pixel. In rularea paralela, aceasta functia ocupa mai putin din real time, in timp ce functiile grid_intersect si sphere intersect ocupa mult mai mult real time in varianta paralela decat ocupat in varianta seriala.
+
+
+Task 5
+
+In arhiva se regaseste un print screen.
+
+
+
+
+
+
+
+
+

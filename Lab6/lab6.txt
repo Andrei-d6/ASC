@@ -1,0 +1,30 @@
+Dugaesescu Andrei 331CC
+
+Laborator 6
+
+Task 1
+
+Cu ajutorul kcachegrind
+Arata graful de apeluri ale programului
+Se poate vedea gradul de ocupare din timupl de executiei al functiilor
+Se poate vedea numarul de apeluri pentru functii, functiile programului, cat dureaza
+
+
+Task 2
+Single thread vs multi thread
+
+Paralel:
+Timpul de executie pentru fiecare thread.
+Timeline ul thread-urilor
+De remarcat ca la timeline munca pt fiecare thread nu este egal.
+Apeluri ulterioare ale functiei TestForPrime for fi apelate pentru numere mai mari,
+de accea trhead-urile care verifica numere mai mici au mult mai putin timp de lucru decat
+thread-urile care verifica numere mai mari
+
+
+Task 3
+
+Serial :11.3s
+Paralel: 5.11s
+
+Cea mai apelata functie: render_one_pixel()

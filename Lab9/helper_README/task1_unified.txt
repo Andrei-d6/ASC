@@ -1,0 +1,22 @@
+==14549== NVPROF is profiling process 14549, command: ./task1_mem_unified
+==14549== Profiling application: ./task1_mem_unified
+==14549== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  1.0704ms         1  1.0704ms  1.0704ms  1.0704ms  kernel_compute(float*, float*, int)
+      API calls:   93.97%  479.08ms         2  239.54ms  7.1597ms  471.92ms  cudaMallocManaged
+                    3.13%  15.953ms         2  7.9767ms  7.5000ms  8.4535ms  cudaFree
+                    2.28%  11.637ms         1  11.637ms  11.637ms  11.637ms  cudaLaunch
+                    0.40%  2.0207ms       282  7.1650us     211ns  286.50us  cuDeviceGetAttribute
+                    0.19%  964.50us         3  321.50us  270.04us  348.07us  cuDeviceTotalMem
+                    0.03%  166.78us         3  55.594us  55.002us  56.234us  cuDeviceGetName
+                    0.00%  12.619us         3  4.2060us     303ns  11.556us  cudaSetupArgument
+                    0.00%  5.7610us         6     960ns     272ns  3.0590us  cuDeviceGet
+                    0.00%  5.4650us         1  5.4650us  5.4650us  5.4650us  cudaConfigureCall
+                    0.00%  3.2410us         3  1.0800us     315ns  2.2680us  cuDeviceGetCount
+
+==14549== Unified Memory profiling result:
+Device "Tesla K40m (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+      33  1.9394MB  256.00KB  2.0000MB  64.00000MB  11.03683ms  Host To Device
+     390  168.04KB  4.0000KB  0.9961MB  64.00000MB  12.50742ms  Device To Host
+Total CPU Page faults: 195

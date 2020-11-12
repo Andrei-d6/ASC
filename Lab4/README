@@ -1,0 +1,34 @@
+Task 1
+
+In cazul alocarii globale de la N = 100.000.000.000 programul nu mai functioneaza. (Segmentation fault)
+In cazul alocarii pe stiva de la N = 10.000.000 programul nu mai functioneaza. (Segmentation fault (core dumped))
+In cazul alocarii dinamice de la N = 100.000.000.000 programul nu mai functioneaza. (Segmentation fault (core dumped))
+
+Rularea comenzii ulimit -a:
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 61659
+max locked memory       (kbytes, -l) 16384
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 61659
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+
+Task 3
+	La afisarea adreselor se poate observa faptul ca, desi sunt declarate pe linii diferite, exista o continuitate a memoriei alocate pentru variabile de acelasi tip (spre exemplu in cazul variabilelor i1, i2, i3..), in sensul in care diferentele de adrese dintre acestea reprezinta chiar spatiul nencesar pentru stocarea unei astfel de variabile (sizeof(int32_t)). Aceasta continuitate a memoriei este un indicator pentru faptul ca in urma compilarii au fost efectuate o serie de rearanjari in vederea optimizarii folosirei memoriei - prin aliniera continua a unor variabile de size < un cuvant nu se pierd octeti de memorie. Daca un cuvant este de 8 octeti iar o varabila declarata pe 4 octeti este urmata de una pe 8 octeti, atunci cei 4 octeti de dupa adresa variabilei mai mici ca marime ar fi pierduri pentru stocarea corecta a celei de a doua variabile (ar deveni 4 octeti de padding).
+	In ceea ce priveste sizeof(struct a) si sizeof(struct b) se poate observa faptul ca, desi contin acelasi numar de variabile de aceeasi marime, marimea structurii a este de 16 bytes iar a structurii b este de 24 bytes. Aceasta diferenta de memorie ocupata provine din mai buna aliniere a variabilelor in contextul structurii a. Prin faptul ca variabilele y si z sunt declarate una dupa cealalta conduce la ocuparea intregului cuvant de memorie spre deosebire de cazul structurii b in care prin ordinea de declarare a variabilelor ajung sa se piarda 4 octeti dupa declararea lui x pentru buna stocare a variabilei y (4 bytes pt x + 4 bytes padding + 8 bytes y + 4 bytes z + 4 bytes padding) = 24 bytes.
+
+Task 4
+L1 size: ~64KB
+L2 size: ~260KB
+
+Task 5
+CACHE LINE SIZE: ~64KB

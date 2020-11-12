@@ -1,0 +1,26 @@
+==50300== NVPROF is profiling process 50300, command: ./task2_partial_atomic
+SUM: 535968646
+MAX: 1023
+MIN: 0
+==50300== Profiling application: ./task2_partial_atomic
+==50300== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  52.111ms        10  5.2111ms  5.2015ms  5.2192ms  kernel_partial_atomics(int*, int*)
+      API calls:   88.35%  442.74ms         2  221.37ms  249.08us  442.49ms  cudaMallocManaged
+                   10.41%  52.184ms        10  5.2184ms  5.2060ms  5.2269ms  cudaDeviceSynchronize
+                    0.47%  2.3636ms       282  8.3810us     337ns  315.29us  cuDeviceGetAttribute
+                    0.44%  2.2295ms        10  222.95us  75.249us  1.4867ms  cudaLaunch
+                    0.25%  1.2340ms         3  411.35us  408.01us  417.51us  cuDeviceTotalMem
+                    0.04%  209.39us         3  69.798us  66.851us  72.908us  cuDeviceGetName
+                    0.03%  138.19us         1  138.19us  138.19us  138.19us  cudaFree
+                    0.00%  15.063us        20     753ns     174ns  7.9620us  cudaSetupArgument
+                    0.00%  12.316us        10  1.2310us     934ns  2.7830us  cudaConfigureCall
+                    0.00%  7.1640us         6  1.1940us     429ns  3.9000us  cuDeviceGet
+                    0.00%  4.2040us         3  1.4010us     354ns  2.7790us  cuDeviceGetCount
+
+==50300== Unified Memory profiling result:
+Device "Tesla K40m (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+      13  318.15KB  4.0000KB  2.0000MB  4.039063MB  715.1680us  Host To Device
+      52  92.308KB  4.0000KB  0.9961MB  4.687500MB  779.9040us  Device To Host
+Total CPU Page faults: 26
